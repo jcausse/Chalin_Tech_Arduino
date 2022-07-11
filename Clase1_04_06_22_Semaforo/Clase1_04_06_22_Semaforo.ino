@@ -21,4 +21,7 @@ void loop() { //El código del loop se ejecuta una vez tras otra, infinitamente
   digitalWrite(VERDE, HIGH); //Encendemos la verde
   delay(TIEMPO_ROJO_Y_VERDE); //Esperamos
   digitalWrite(VERDE, LOW); //Apagamos la verde. Inmediatamente después se vuelve a empezar desde el principio del loop, haciendo que el semáforo funcione "infinitamente"
+  digitalWrite(AMARILLO, HIGH);
+  delay(TIEMPO_AMARILLO);
+  digitalWrite(AMARILLO, LOW);
 }
