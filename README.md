@@ -3,3 +3,4 @@
 
 Juan Ignacio Causse  
 Contacto: juanignaciocausse@gmail.com
+Source de algunas librerias: https://github.com/jcausse/Arduino_Libraries
