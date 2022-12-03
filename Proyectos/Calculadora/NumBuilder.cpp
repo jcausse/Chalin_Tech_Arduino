@@ -9,7 +9,7 @@ int NumBuilder::addDigit(char d){
         return -1;
     }
     if (d == '-'){
-        if(this->index > 0){
+        if(this->index > 0 || this->negative){
             return -1;
         }
         this->negative = true;
