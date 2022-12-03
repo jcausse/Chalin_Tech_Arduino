@@ -21,6 +21,6 @@ private:
     long number;
     unsigned int index;
     bool negative;
-}
+};
 
 #endif //NUM_BUILDER_H
