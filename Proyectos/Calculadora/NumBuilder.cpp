@@ -20,9 +20,6 @@ int NumBuilder::addDigit(char d){
         return -1;
     }
     else{
-        if(this->index == 0){
-            this->negative = false;
-        }
         this->digits[this->index] = d;
         (this->index)++;
     }
