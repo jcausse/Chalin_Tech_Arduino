@@ -1,7 +1,7 @@
 #include "NumBuilder.hpp"
 
 NumBuilder::NumBuilder(){
-    this->reset();
+    NumBuilder::reset();
 }
 
 int NumBuilder::addDigit(char d){
