@@ -1,5 +1,7 @@
 #include "NumBuilder.hpp"
 
+static long powOf10(int n);
+
 NumBuilder::NumBuilder(){
     NumBuilder::reset();
 }
@@ -50,7 +52,7 @@ void NumBuilder::reset(){
     }
 }
 
-long powOf10(unsigned int n){
+static long powOf10(unsigned int n){
     long p = 1;
     while(n > 0){
         p *= 10;
