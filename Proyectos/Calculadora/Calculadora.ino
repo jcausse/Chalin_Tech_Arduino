@@ -41,7 +41,7 @@ void setup(){
   lcd.print("Calculadora");
   lcd.setCursor(0, 1);
   lcd.print("Chalin Tech");
-  while(keypad.getKey() != 'C');
+  delay(3000);
   lcd.clear();
   lcd.setCursor(0, 0);
 }
@@ -114,15 +114,9 @@ void setOperation(char key){
 void digit(char key){
   int ret;
   if (operation == 0){
-    if (key == '0' && num1->isEmpty()){
-      return;
-    }
     ret = num1->addDigit(key);
   }
   else{
-    if (key == '0' && num2->isEmpty()){
-      return;
-    }
     ret = num2->addDigit(key);
   }
   if(ret == -2){
