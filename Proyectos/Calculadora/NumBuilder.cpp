@@ -1,6 +1,7 @@
 #include "NumBuilder.hpp"
 
 static long powOf10(unsigned int n);
+static bool my_isdigit(char c);
 
 NumBuilder::NumBuilder(){
     NumBuilder::reset();
@@ -8,7 +9,7 @@ NumBuilder::NumBuilder(){
 
 int NumBuilder::addDigit(char d){
     if (this->index >= MAX_DIGITS){
-        return -1;
+        return -2;
     }
     if (d == '-'){
         if(this->index > 0 || this->negative){
@@ -16,7 +17,7 @@ int NumBuilder::addDigit(char d){
         }
         this->negative = true;
     }
-    else if(! isdigit(d)){
+    else if(! my_isdigit(d)){
         return -1;
     }
     else{
@@ -56,4 +57,24 @@ static long powOf10(unsigned int n){
         n--;
     }
     return p;
+}
+
+static bool my_isdigit(char c){
+  switch (c){
+    case '0':
+    case '1':
+    case '2':
+    case '3':
+    case '4':
+    case '5':
+    case '6':
+    case '7':
+    case '8':
+    case '9':
+      return true;
+      break;
+    default:
+      break;
+  }
+  return false;
 }

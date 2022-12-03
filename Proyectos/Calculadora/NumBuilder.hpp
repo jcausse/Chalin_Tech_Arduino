@@ -1,10 +1,8 @@
 #ifndef NUM_BUILDER_H
 #define NUM_BUILDER_H
 
-#include <iostream>
-
 #define ASCII_ZERO 0x30                                                       //Valor del cero ASCII para conversion de char a int
-#define MAX_DIGITS 14                                                         //Maximo numero de digitos permitidos por numero
+#define MAX_DIGITS 10                                                         //Maximo numero de digitos permitidos por numero
 
 class NumBuilder{
 public:
