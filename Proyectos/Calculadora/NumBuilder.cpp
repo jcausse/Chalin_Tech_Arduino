@@ -1,7 +1,7 @@
 #include "NumBuilder.hpp"
 
 NumBuilder::NumBuilder(){
-    reset();
+    this->reset();
 }
 
 int NumBuilder::addDigit(char d){
@@ -13,6 +13,9 @@ int NumBuilder::addDigit(char d){
             return -1;
         }
         this->negative = true;
+    }
+    else if(! isdigit(d)){
+        return -1;
     }
     else{
         if(this->index == 0){
