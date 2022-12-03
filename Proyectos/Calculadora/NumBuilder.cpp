@@ -1,6 +1,6 @@
 #include "NumBuilder.hpp"
 
-static long powOf10(int n);
+static long powOf10(unsigned int n);
 
 NumBuilder::NumBuilder(){
     NumBuilder::reset();
