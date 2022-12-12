@@ -10,6 +10,23 @@
 #include <LiquidCrystal.h>
 #include <Servo.h>
 
+#define SERVO_PIN 6
+#define D_D4 8
+#define D_D5 9
+#define D_D6 10
+#define D_D7 11
+#define D_RS 12
+#define D_EN 7
+
+#define K_R1 44
+#define K_R2 42
+#define K_R3 40
+#define K_R4 38
+#define K_C1 36
+#define K_C2 34
+#define K_C3 32
+#define K_C4 30
+
 #define ROWS 4                                                                //Numero de filas del teclado matricial
 #define COLS 4                                                                //Numero de columnas del teclado matricial
 
@@ -18,7 +35,6 @@
 
 #define OPEN() servo.write(180);
 #define CLOSE() servo.write(0);
-#define SERVO_PIN A0
 
 char keys[ROWS][COLS] = {                                                     //Mapeo de teclas del teclado matricial
   {'1','2','3','A'},
@@ -26,12 +42,11 @@ char keys[ROWS][COLS] = {                                                     //
   {'7','8','9','C'},
   {'*','0','#','D'}
 };
-byte rowPins[ROWS] = {0, 1, 2, 3};                                            //Pines de filas (para escritura)
-byte colPins[COLS] = {4, 5, 6, 7};                                            //Pines de columnas (para lectura)
+byte rowPins[ROWS] = {K_R1, K_R2, K_R3, K_R4};                                            //Pines de filas (para escritura)
+byte colPins[COLS] = {K_C1, K_C2, K_C3, K_C4};                                            //Pines de columnas (para lectura)
 Keypad keypad = Keypad( makeKeymap(keys), rowPins, colPins, ROWS, COLS );     //Creacion de objeto teclado
 
-const int rs = 8, en = 9, d4 = 10, d5 = 11, d6 = 12, d7 = 13;                 //Definicion de pines del display
-LiquidCrystal lcd(rs, en, d4, d5, d6, d7);                                    //Creacion de objeto display
+LiquidCrystal lcd(D_RS, D_EN, D_D4, D_D5, D_D6, D_D7);                                    //Creacion de objeto display
 
 Servo servo = Servo();
 
